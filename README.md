@@ -11,6 +11,9 @@ Questions:
 -	How does EPFL compare to other universities on search ranking ? 
 -	What opportunities can we find for EPFL to improve their search ranking
 
+Read more about the idea here:
+http://www.rankfalcon.com/blog/page/3/google-search-for-data-science:-on-measuring-importance-%26-popularity/
+
 ## Data description
 
 ### The idea
