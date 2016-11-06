@@ -47,8 +47,8 @@ Getting the data: essentially we get all the data either by scraping search rank
 
 ## Timeplan
 
-November 1st half: Defining the scope: universities and keywords to use, 
-November 2nd half: Getting the data and initial data exploration
-December 1st half: Data analysis, building the ranking
-December 2nd half: Initial work on visualisations
-January: Finish visualisations and results presentation.
+November 1st half: Defining the scope: universities and keywords to use  
+November 2nd half: Getting the data and initial data exploration  
+December 1st half: Data analysis, building the ranking   
+December 2nd half: Initial work on visualisations  
+January: Finish visualisations and results presentation  
