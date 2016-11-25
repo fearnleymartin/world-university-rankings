@@ -33,7 +33,7 @@ We can also get a time series of rankings to see how the ranking has evolved ove
 
 Google’s apis are a goldmine for data. With sources like google keyword planner and google search console we can extract data like the CPC (cost per click: how much people will pay for an ad on a given keyword), search volume (how many people have searched for a query in a given month), CTR (click through rate, ratio of how many people click on your site to how many people have seen your site on google) etc.
 
-We can extract this data for all of the keywords and cross reference it with our search ranking data. This can allow us, for example, to ponder of results depending on the importance of a keyword. For example, a university might be really highly ranked for a given keyword, but if only 3 people search for this keyword a month, this ranking is not particularly relevant.
+We can extract this data for all of the keywords and cross reference it with our search ranking data. This can allow us, for example, to weight our results depending on the importance of a keyword. For example, a university might be really highly ranked for a given keyword, but if only 3 people search for this keyword a month, this ranking is not particularly relevant.
 
 
 ## Feasibility/Risks
