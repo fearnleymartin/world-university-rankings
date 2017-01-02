@@ -1,0 +1,13 @@
+,competition,cpc,keyword_name,search_volume
+0,Medium,€8.63,bachelor of accounting ,1K – 10K
+1,Low,€4.34,bachelor of biology ,100 – 1K
+2,Low,€9.85,bachelor of arts history ,100 – 1K
+3,Low,€2.85,bachelor of biochemistry ,100 – 1K
+4,Low,€2.66,bachelor of archaeology ,10 – 100
+5,Low,€13.23,bachelor of applied mathematics ,10 – 100
+6,–,€9.40,bachelor of academic studies in education ,–
+7,–,€28.78,bachelor of adult nursing ,–
+8,–,€21.36,bachelor of aquatic sciences ,–
+9,–,€23.90,bachelor of arts & humanities ,–
+10,–,€10.64,bachelor of astronomy & planetary science ,–
+11,–,€12.01,bachelor of business & commercial law ,–
