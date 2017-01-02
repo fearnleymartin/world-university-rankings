@@ -1,0 +1,337 @@
+bachelor's Academic Studies In Education
+bachelor's Accounting
+bachelor's Adult Nursing
+bachelor's Applied Mathematics
+bachelor's Aquatic Sciences
+bachelor's Archaeology
+bachelor's Art History
+bachelor's Arts & Humanities
+bachelor's Astronomy & Planetary Science
+bachelor's Biochemistry
+bachelor's Biology
+bachelor's Business & Commercial Law
+bachelor's Business & Management
+bachelor's Business Studies
+bachelor's Chemistry
+bachelor's Childhood & Youth Studies
+bachelor's Children, Young People & Families
+bachelor's Chinese
+bachelor's Classical Studies
+bachelor's Communication Technologies
+bachelor's Computing & IT
+bachelor's Counselling
+bachelor's Creative Writing
+bachelor's Criminology
+bachelor's Design
+bachelor's Development
+bachelor's Early Years
+bachelor's Earth Sciences
+bachelor's Ecology
+bachelor's Economics
+bachelor's Education, Childhood & Youth
+bachelor's Electronic Engineering
+bachelor's Engineering
+bachelor's English Language
+bachelor's English Literature
+bachelor's Environment & Development
+bachelor's Environmental Management
+bachelor's Environmental Sciences
+bachelor's Environmental Studies
+bachelor's Finance
+bachelor's French
+bachelor's General Computing
+bachelor's General Design
+bachelor's General Education
+bachelor's General Engineering
+bachelor's General Humanities
+bachelor's General Law
+bachelor's General Mathematics
+bachelor's General Nursing
+bachelor's General Social Science
+bachelor's General Statistics
+bachelor's General Technology
+bachelor's Genetics
+bachelor's Geography
+bachelor's Geology
+bachelor's German
+bachelor's Graphic Design
+bachelor's Health & Social Care
+bachelor's Health & Wellbeing
+bachelor's Health Sciences
+bachelor's Healthcare Practice
+bachelor's Heritage
+bachelor's History
+bachelor's Human Anatomy
+bachelor's Human Computer Interaction
+bachelor's Humanities
+bachelor's International Studies
+bachelor's Italian
+bachelor's Languages
+bachelor's Law
+bachelor's Leadership & Management
+bachelor's Linguistics
+bachelor's Management
+bachelor's Marketing
+bachelor's Mathematical Methods
+bachelor's Mathematics
+bachelor's Mathematics & Statistics
+bachelor's Medical Sciences
+bachelor's Mental Health Nursing
+bachelor's Music
+bachelor's Natural Sciences
+bachelor's Networking
+bachelor's Neuroscience
+bachelor's Nursing & Healthcare Practice
+bachelor's Pathology
+bachelor's Philosophy
+bachelor's Physics
+bachelor's Politics
+bachelor's Primary Education
+bachelor's Professional Science
+bachelor's Project Management
+bachelor's Psychology
+bachelor's Psychology & Counselling
+bachelor's Pure Mathematics
+bachelor's Religious Studies
+bachelor's Research & Study Skills In Education
+bachelor's Retail Management
+bachelor's Science
+bachelor's Secondary Education
+bachelor's Social Care
+bachelor's Social Policy
+bachelor's Social Sciences
+bachelor's Social Work
+bachelor's Sociology
+bachelor's Software Engineering
+bachelor's Spanish
+bachelor's Sport & Fitness
+bachelor's Statistics
+bachelor's Strategic Management
+bachelor's Teacher Training
+bachelor's Technology
+bachelor's UK Law
+bachelor's Youth Studiesmaster's Academic Studies In Education
+master's Accounting
+master's Adult Nursing
+master's Applied Mathematics
+master's Aquatic Sciences
+master's Archaeology
+master's Art History
+master's Arts & Humanities
+master's Astronomy & Planetary Science
+master's Biochemistry
+master's Biology
+master's Business & Commercial Law
+master's Business & Management
+master's Business Studies
+master's Chemistry
+master's Childhood & Youth Studies
+master's Children, Young People & Families
+master's Chinese
+master's Classical Studies
+master's Communication Technologies
+master's Computing & IT
+master's Counselling
+master's Creative Writing
+master's Criminology
+master's Design
+master's Development
+master's Early Years
+master's Earth Sciences
+master's Ecology
+master's Economics
+master's Education, Childhood & Youth
+master's Electronic Engineering
+master's Engineering
+master's English Language
+master's English Literature
+master's Environment & Development
+master's Environmental Management
+master's Environmental Sciences
+master's Environmental Studies
+master's Finance
+master's French
+master's General Computing
+master's General Design
+master's General Education
+master's General Engineering
+master's General Humanities
+master's General Law
+master's General Mathematics
+master's General Nursing
+master's General Social Science
+master's General Statistics
+master's General Technology
+master's Genetics
+master's Geography
+master's Geology
+master's German
+master's Graphic Design
+master's Health & Social Care
+master's Health & Wellbeing
+master's Health Sciences
+master's Healthcare Practice
+master's Heritage
+master's History
+master's Human Anatomy
+master's Human Computer Interaction
+master's Humanities
+master's International Studies
+master's Italian
+master's Languages
+master's Law
+master's Leadership & Management
+master's Linguistics
+master's Management
+master's Marketing
+master's Mathematical Methods
+master's Mathematics
+master's Mathematics & Statistics
+master's Medical Sciences
+master's Mental Health Nursing
+master's Music
+master's Natural Sciences
+master's Networking
+master's Neuroscience
+master's Nursing & Healthcare Practice
+master's Pathology
+master's Philosophy
+master's Physics
+master's Politics
+master's Primary Education
+master's Professional Science
+master's Project Management
+master's Psychology
+master's Psychology & Counselling
+master's Pure Mathematics
+master's Religious Studies
+master's Research & Study Skills In Education
+master's Retail Management
+master's Science
+master's Secondary Education
+master's Social Care
+master's Social Policy
+master's Social Sciences
+master's Social Work
+master's Sociology
+master's Software Engineering
+master's Spanish
+master's Sport & Fitness
+master's Statistics
+master's Strategic Management
+master's Teacher Training
+master's Technology
+master's UK Law
+master's Youth Studiesphd Academic Studies In Education
+phd Accounting
+phd Adult Nursing
+phd Applied Mathematics
+phd Aquatic Sciences
+phd Archaeology
+phd Art History
+phd Arts & Humanities
+phd Astronomy & Planetary Science
+phd Biochemistry
+phd Biology
+phd Business & Commercial Law
+phd Business & Management
+phd Business Studies
+phd Chemistry
+phd Childhood & Youth Studies
+phd Children, Young People & Families
+phd Chinese
+phd Classical Studies
+phd Communication Technologies
+phd Computing & IT
+phd Counselling
+phd Creative Writing
+phd Criminology
+phd Design
+phd Development
+phd Early Years
+phd Earth Sciences
+phd Ecology
+phd Economics
+phd Education, Childhood & Youth
+phd Electronic Engineering
+phd Engineering
+phd English Language
+phd English Literature
+phd Environment & Development
+phd Environmental Management
+phd Environmental Sciences
+phd Environmental Studies
+phd Finance
+phd French
+phd General Computing
+phd General Design
+phd General Education
+phd General Engineering
+phd General Humanities
+phd General Law
+phd General Mathematics
+phd General Nursing
+phd General Social Science
+phd General Statistics
+phd General Technology
+phd Genetics
+phd Geography
+phd Geology
+phd German
+phd Graphic Design
+phd Health & Social Care
+phd Health & Wellbeing
+phd Health Sciences
+phd Healthcare Practice
+phd Heritage
+phd History
+phd Human Anatomy
+phd Human Computer Interaction
+phd Humanities
+phd International Studies
+phd Italian
+phd Languages
+phd Law
+phd Leadership & Management
+phd Linguistics
+phd Management
+phd Marketing
+phd Mathematical Methods
+phd Mathematics
+phd Mathematics & Statistics
+phd Medical Sciences
+phd Mental Health Nursing
+phd Music
+phd Natural Sciences
+phd Networking
+phd Neuroscience
+phd Nursing & Healthcare Practice
+phd Pathology
+phd Philosophy
+phd Physics
+phd Politics
+phd Primary Education
+phd Professional Science
+phd Project Management
+phd Psychology
+phd Psychology & Counselling
+phd Pure Mathematics
+phd Religious Studies
+phd Research & Study Skills In Education
+phd Retail Management
+phd Science
+phd Secondary Education
+phd Social Care
+phd Social Policy
+phd Social Sciences
+phd Social Work
+phd Sociology
+phd Software Engineering
+phd Spanish
+phd Sport & Fitness
+phd Statistics
+phd Strategic Management
+phd Teacher Training
+phd Technology
+phd UK Law
+phd Youth Studies

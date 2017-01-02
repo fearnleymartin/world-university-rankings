@@ -1,0 +1,22 @@
+Type 1: Subject + degree level
+subject + masters
+subject + bachelors
+subject + postgraduate
+Comments: gives mainly university websites
+
+Type 2: General university keywords/top universities
+comments: tends to give sites that talk aout universities but not actual university websites
+
+Type 3: Question keywords
+comments: same as type 2
+
+Type 4: Country specific keywords
+
+
+Type 5: 
+
+
+Comments:
+Seem to get the best results with type 1 keywords: i.e. a high number of university websites in the results.
+The other types of keywords not so good.
+Small variations in the keywords can change the results quite a lot (i.e. bachelors vs undergraduate), even though essentially the same thing. I think therefore it is important to be comprehensive in keyword variation and average out
