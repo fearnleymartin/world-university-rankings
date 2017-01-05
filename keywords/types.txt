@@ -20,3 +20,16 @@ Comments:
 Seem to get the best results with type 1 keywords: i.e. a high number of university websites in the results.
 The other types of keywords not so good.
 Small variations in the keywords can change the results quite a lot (i.e. bachelors vs undergraduate), even though essentially the same thing. I think therefore it is important to be comprehensive in keyword variation and average out
+
+Google Keyword Planner (GKP) data:
+Out of: master's degree mathematics, master's mathematics, master's in mathematics, master's degree in mathematics
+master's degree in mathematics gives the highest search volume and cpc (100-1K and 10.75€)
+
+Out of: bachelor's degree mathematics, bachelor's mathematics, bachelor's in mathematics, bachelor's degree in mathematics
+bachelor's degree in mathematics has the higest SV (100-1K)
+bachelor degree mathematics has the highest cpc (12.36€)
+
+Out of: phd mathematics, postgraduate mathematics, phd in mathematics, postgrad in mathematics
+phd in mathematics has the highest SV and CPC (1K-10K and 2.13€)
+
+This can help us make a decision as to which keywords to use.
