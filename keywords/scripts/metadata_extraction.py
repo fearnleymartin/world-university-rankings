@@ -1,5 +1,6 @@
 '''
 This scripts allows you to automatically extract keyword metadata from Google keyword planner via scraping with selenium
+TODO: group keywords into groups of 10 and run for each query
 '''
 
 from selenium import webdriver
@@ -12,8 +13,8 @@ import pandas as pd
 selenium.webdriver.support.wait.POLL_FREQUENCY = 0.05
 
 chrome_driver_path = 'C:/Users/Fearnley/Downloads/chromedriver_win32/chromedriver.exe'
-keywords_file = '../type1_cut.txt'
-output_file = '../type1_cut_metadata.txt'
+keywords_file = '../type1.txt'
+output_file = '../type1_metadata.txt'
 
 class AdwordsAutomater(object):
     def __init__(self, email, passwd):
@@ -24,7 +25,7 @@ class AdwordsAutomater(object):
         except:
             self.ff = webdriver.Firefox()
             self.ff.set_page_load_timeout(30)
-        self.ff.implicitly_wait(30)
+        self.ff.implicitly_wait(90)
         self.busy = False
         self.is_login = False
         self.on_keyword_page = False
@@ -60,31 +61,79 @@ class AdwordsAutomater(object):
         if not isinstance(keywords, collections.Iterable):
             keywords = [keywords]
 
-        print(self.email, 'querying', keywords)
+        # first_batch_keywords = keywords[:10]
+        # rest_of_keywords = keywords[10:]
+
+        # print(self.email, 'querying', keywords)
         self.busy = True
         ret = {}
 
         print('visiting keyword tools')
         self.ff.get(self.kwurl)
 
-        # unfold menu
         collapsed_menu = self.ff.find_element_by_id('gwt-debug-splash-panel-search-selection-input')
         collapsed_menu.click()
-        kwinput = self.ff.find_element_by_id('gwt-debug-keywords-text-area')
-        kwinput.send_keys('\n'.join(keywords))
 
-        self.ff.find_element_by_id('gwt-debug-search-button-content').click()
+        # First batch
+        n = 25  # batch size
+        for batch in [keywords[i:i+n] for i in range(1, len(keywords), n)]:
+            print(batch)
+            # unfold menu
 
-        data = []
-        df = pd.DataFrame(columns=['keyword', 'search volume', 'competition', 'cpc'])
-        for i in range(len(keywords)):
-            keyword_name = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-KEYWORD-row-{}-0"]/div'.format(i))[0].text
-            search_volume = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-SEARCH_VOLUME_PRIMARY-row-{}-0"]'.format(i))[0].text
-            competition = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-COMPETITION-row-{}-1"]'.format(i))[0].text
-            cpc = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-SUGGESTED_BID-row-{}-2"]/div'.format(i))[0].text
+            kwinput = self.ff.find_element_by_id('gwt-debug-keywords-text-area')
+            kwinput.send_keys('\n'.join(batch))
 
-            data.append(dict(keyword_name=keyword_name, search_volume=search_volume, competition=competition, cpc=cpc))
+            self.ff.find_element_by_id('gwt-debug-search-button-content').click()
+
+            data = []
+            # df = pd.DataFrame(columns=['keyword', 'search volume', 'competition', 'cpc'])
+            for i in range(len(batch)):
+                try:
+                    keyword_name = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-KEYWORD-row-{}-0"]/div'.format(i))[0].text
+                    search_volume = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-SEARCH_VOLUME_PRIMARY-row-{}-0"]'.format(i))[0].text
+                    competition = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-COMPETITION-row-{}-1"]'.format(i))[0].text
+                    cpc = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-SUGGESTED_BID-row-{}-2"]/div'.format(i))[0].text
+                except Exception:
+                    keyword_name = \
+                    self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-KEYWORD-row-{}-0"]/div'.format(i))[0].text
+                    search_volume = self.ff.find_elements_by_xpath(
+                        '//*[@id="gwt-debug-column-SEARCH_VOLUME_PRIMARY-row-{}-0"]'.format(i))[0].text
+                    competition = \
+                    self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-COMPETITION-row-{}-1"]'.format(i))[0].text
+                    cpc = \
+                    self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-SUGGESTED_BID-row-{}-2"]/div'.format(i))[
+                        0].text
+
+                data.append(dict(keyword_name=keyword_name, search_volume=search_volume, competition=competition, cpc=cpc))
+            print(data[-10:])
+            print('going back')
+            self.ff.back()
+
         self.busy = False
+
+        # print('done first batch')
+        # print(data)
+        #
+        # # second batch
+        # n = 10  # batch size
+        # if len(rest_of_keywords) > 0 :
+        #     for batch in [rest_of_keywords[i:i+n] for i in range(1,len(rest_of_keywords),n)]:
+        #         # Query + click
+        #         query_box = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-keywords-text-area"]')[0]
+        #
+        #         query_box.send_keys('\n'.join(batch))
+        #         self.ff.find_elements_by_xpath('//*[@id="gwt-debug-search-button"]/div/div/div/div[2]')[0].click()
+        #
+        #         for i in range(len(batch)):
+        #             keyword_name = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-KEYWORD-row-{}-0"]/div'.format(i))[0].text
+        #             search_volume = self.ff.find_elements_by_xpath(
+        #                 '//*[@id="gwt-debug-column-SEARCH_VOLUME_PRIMARY-row-{}-0"]'.format(i))[0].text
+        #             competition = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-COMPETITION-row-{}-1"]'.format(i))[0].text
+        #             cpc = self.ff.find_elements_by_xpath('//*[@id="gwt-debug-column-SUGGESTED_BID-row-{}-2"]/div'.format(i))[0].text
+        #
+        #             data.append(
+        #                 dict(keyword_name=keyword_name, search_volume=search_volume, competition=competition, cpc=cpc))
+
         df = pd.DataFrame(data)
         return df
 

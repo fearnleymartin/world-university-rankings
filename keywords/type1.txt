@@ -110,7 +110,8 @@ bachelor's degree in Strategic Management
 bachelor's degree in Teacher Training
 bachelor's degree in Technology
 bachelor's degree in UK Law
-bachelor's degree in Youth Studiesmaster's degree in Academic Studies In Education
+bachelor's degree in Youth Studies
+master's degree in Academic Studies In Education
 master's degree in Accounting
 master's degree in Adult Nursing
 master's degree in Applied Mathematics
@@ -222,7 +223,8 @@ master's degree in Strategic Management
 master's degree in Teacher Training
 master's degree in Technology
 master's degree in UK Law
-master's degree in Youth Studiesphd in Academic Studies In Education
+master's degree in Youth Studies
+phd in Academic Studies In Education
 phd in Accounting
 phd in Adult Nursing
 phd in Applied Mathematics

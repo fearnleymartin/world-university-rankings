@@ -33,3 +33,9 @@ Out of: phd mathematics, postgraduate mathematics, phd in mathematics, postgrad 
 phd in mathematics has the highest SV and CPC (1K-10K and 2.13€)
 
 This can help us make a decision as to which keywords to use.
+
+Note: master's degree in Youth Studies
+phd in Academic Studies In Education
+and bachelor's degree in Youth Studies
+master's degree in Academic Studies In Education
+both got mucked up because a space was missing
