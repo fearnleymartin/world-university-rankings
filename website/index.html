@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rank Academy</title>
+  <link rel="icon" href="icon.ico" />
+  <link rel="stylesheet" href="jvectormap/jquery-jvectormap.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="main.css" type="text/css" media="screen"/>
+  <script src="jquery/jquery.js"></script>
+  <script src="jvectormap/jquery-jvectormap.js"></script>
+  <script src="jvectormap/jquery-jvectormap-world-mill.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+
+	<div id="colorizer">
+
+		<div id="map"></div>
+		<img src="assets/planetMask.png" id="mask"/>
+
+		<div id="panel">
+
+			<button class="scrollElement" onclick="clickedElement (0)"></button>
+			<button class="scrollElement" onclick="clickedElement (1)"></button>
+			<button class="scrollElement" onclick="clickedElement (2)"></button>
+			<button class="scrollElement" onclick="clickedElement (3)"></button>
+			<button class="scrollElement" onclick="clickedElement (4)"></button>
+			<button class="scrollElement" onclick="clickedElement (5)"></button>
+			<button class="scrollElement" onclick="clickedElement (6)"></button>
+			<button class="scrollElement" onclick="clickedElement (7)"></button>
+			<button class="scrollElement" onclick="clickedElement (8)"></button>
+			<button class="scrollElement" onclick="clickedElement (9)"></button>
+			
+			<div id="degreeSelection">
+			
+				<div id="bachelorLink"></div>
+				<div id="masterLink"></div>
+				<div id="phdLink"></div>
+				
+				<button id="bachelorButton" class="filterButton" onclick="chooseFilterDegree ('Bachelor');">Bachelor</button>
+				<button id="masterButton" class="filterButton" onclick="chooseFilterDegree ('Master');">Master</button>
+				<button id="phdButton" class="filterButton" onclick="chooseFilterDegree ('PhD');">PhD</button>
+			
+			</div>
+		
+			<button id="allFilter" class="filterButton" onclick="chooseFilterAll ();">ALL</button>
+			
+			<div id="topButtons" class="swipeUp">
+			
+				<div id="filter" onclick="startFilter ();">Filter</div>
+				
+			</div>
+
+		</div>
+
+		<div id="bottom" class="swipeUp">
+
+			<div id="arrowContainer1">
+
+				<img class="arrow1" src="assets/arrow.png"/>
+				<img class="arrow2" src="assets/arrow.png"/>
+				<img class="arrow3" src="assets/arrow.png"/>
+
+			</div>
+
+			<div id="bottomText">Rankings</div>
+
+			<div id="arrowContainer2">
+
+				<img class="arrow1" src="assets/arrow.png"/>
+				<img class="arrow2" src="assets/arrow.png"/>
+				<img class="arrow3" src="assets/arrow.png"/>
+
+			</div>
+
+		</div>
+		
+	</div>
+  
+</body>
+</html>
