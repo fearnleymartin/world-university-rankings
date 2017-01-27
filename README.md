@@ -1,4 +1,4 @@
-# ADA Project Proposition: World Universities as ranked by their prominence on the web
+# ADA Project : World Universities as ranked by their prominence on the web
 Alternative world university rankings based on their search engine visibility
 
 ## Abstract 
@@ -13,6 +13,9 @@ Questions:
 
 Read more about the idea here:
 http://www.rankfalcon.com/blog/page/3/google-search-for-data-science:-on-measuring-importance-%26-popularity/
+
+See results here:
+http://rank.academy
 
 ## Data description
 
@@ -47,11 +50,3 @@ Getting the data: essentially we get all the data either by scraping search rank
 - Visualisations (interactive maps, interactive charts, graph mapping links between university pages)
 - Article on results
 - Suggestions for improving EPFL's SEO based on our observations
-
-## Timeplan
-
-November 1st half: Defining the scope: universities and keywords to use  
-November 2nd half: Getting the data and initial data exploration  
-December 1st half: Data analysis, building the ranking   
-December 2nd half: Initial work on visualisations  
-January: Finish visualisations and results presentation  
