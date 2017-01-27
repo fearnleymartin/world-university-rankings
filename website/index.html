@@ -11,8 +11,25 @@
   <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
   <script src="main.js"></script>
 
+  <link rel="stylesheet" href="assets/Remodal-master/Remodal-master/dist/remodal.css">
+  <link rel="stylesheet" href="assets/Remodal-master/Remodal-master/dist/remodal-default-theme.css">
+
 </head>
 <body>
+
+	<div class="remodal" data-remodal-id="modal">
+	  <button data-remodal-action="close" class="remodal-close"></button>
+	  <h1>Alternative University Rankings Project</h1>
+	  <p>
+		In this project, our aim is to study how the world's universities are represented in Google's search results. We would like to know which universities are very easy to find on the internet and which are not, which university websites are considered to have a good reputation by Google and which are not.
+	  </p>
+	  <p>
+		  We then use the data gathered to build an alternative university ranking, based on the universities' search engine visibility. The initial intuition behind the idea is that traditional rankings measure how many times a university's publications are cited, and we transpose this idea to Google search results where one of the key criteria for ranking websites is how many other websites link to the website in question (page rank).
+	  </p>
+		<p>For more details on the methodology used, see the following notebook:</p>
+		<br>
+		<button data-remodal-action="confirm" class="remodal-confirm">Go to rankings</button>
+	</div>
 
 	<div id="colorizer">
 
@@ -49,6 +66,8 @@
 			<div id="topButtons" class="swipeUp">
 			
 				<div id="filter" onclick="startFilter ();">Filter</div>
+				<!--<a id="about" href="#modal">About</a>-->
+				<div id="about" onclick="var inst = $('[data-remodal-id=modal]').remodal();inst.open();">About</div>
 				
 			</div>
 
@@ -77,6 +96,6 @@
 		</div>
 		
 	</div>
-  
+  <script src="assets/Remodal-master/Remodal-master/dist/remodal.min.js"></script>
 </body>
 </html>

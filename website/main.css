@@ -214,6 +214,26 @@ body {
 	
 }
 
+#about {
+
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	width: 10vw;
+	height: 8vh;
+	font-family: Roboto;
+	font-size: 3vh;
+	text-align: center;
+	background: rgba(0, 0, 80, 0.5);
+	color: #5555ff;
+	line-height: 8vh;
+	border-radius: 5px;
+	cursor: pointer;
+	border-style: solid;
+    border-width: 1px;
+
+}
+
 .filterButton {
 	
 	width: 10vw;

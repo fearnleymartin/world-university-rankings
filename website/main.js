@@ -274,6 +274,10 @@ doc.ready (function (e) {
 		refreshLeaderboardEntries ();
 		
 	});
+
+	var inst = $('[data-remodal-id=modal]').remodal();
+
+	inst.open();
 	
 });
 
@@ -708,9 +712,7 @@ function getRankedUniversities () {
 			.nest()
 			.key(function(entry){return entry.University;})
 			.rollup(function(entries){
-				// console.log(entries)
 				return {"rank": d3.sum(entries, function(g){return g.weighted_inv_rank;}),
-						// "country": entries.length,
 						"country": entries[0].Country,
 						"website": entries[0].domain
 				};
