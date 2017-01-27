@@ -275,8 +275,10 @@ doc.ready (function (e) {
 		
 	});
 
-	var inst = $('[data-remodal-id=modal]').remodal();
+	// When loading page, open about modale window which explains the project in a couple of sentances
 
+	// switchState()
+	var inst = $('[data-remodal-id=modal]').remodal();
 	inst.open();
 	
 });
@@ -690,6 +692,8 @@ function getRankedUniversities () {
 
 	// Load and aggregate data depending on filters
 	d3.csv('data/data.csv', function(csv_data){
+
+		// Filter on country, degree or domain
 		var filtered_data = csv_data;
         if (countryFilter != 'All') {
             filtered_data = filtered_data.filter(function (d) {
@@ -708,6 +712,7 @@ function getRankedUniversities () {
 			});
 		}
 
+		// Groupo data by university and sum up the rankings
 		var data = d3
 			.nest()
 			.key(function(entry){return entry.University;})
@@ -720,6 +725,7 @@ function getRankedUniversities () {
 			data.sort(function(a,b){return a.value.rank - b.value.rank});
 			data.reverse();
 			// console.log(data);
+            // Build ranking to return to leaderboard
 			var step;
 			for (step=1; step<data.length; step++){
 				obj = {
@@ -733,16 +739,6 @@ function getRankedUniversities () {
 				l.push(obj);
 			}
 	});
-
-
-	// REMOVE THE CODE BELOW
-	
-	// if (countryFilter == 'All')
-	// 	l = [{name: 'EPFL', rank: 1, country: 'Switzerland', website: 'www.epfl.ch', lat: 46.5190557, lng: 6.566757600000001}, {name: 'Centrale Paris', rank: 2, country: 'France', website: 'www.ecp.fr', lat: 50.63372589999999, lng: 3.045104}, {name: 'Centrale Paris', rank: 3, country: 'France', website: 'www.ecp.fr', lat: 78.63372589999999, lng: 7.045104}, {name: 'Centrale Paris', rank: 4, country: 'France', website: 'www.ecp.fr', lat: 40.63372589999999, lng: -10.045104}, {name: 'Centrale Paris', rank: 5, country: 'France', website: 'www.ecp.fr', lat: 22.63372589999999, lng: 5.045104}];
-	// else
-	// 	l = [{name: 'EPFL', rank: 1, country: 'Switzerland', website: 'www.epfl.ch', lat: 46.5190557, lng: 6.566757600000001}];
-	
-	// REMOVE THE CODE ABOVE
 	
 	setTimeout (function () {
 		refreshMapPins ();
