@@ -686,31 +686,50 @@ function getRankedUniversities () {
 
 	// Load and aggregate data depending on filters
 	d3.csv('data/data.csv', function(csv_data){
-		var data = d3.nest()
-		.key(function(entry){return entry.University;})
-		.rollup(function(entries){
-			// console.log(entries)
-			return {"rank": d3.sum(entries, function(g){return g.weighted_inv_rank;}),
-					// "country": entries.length,
-					"country": entries[0].Country,
-					"website": entries[0].domain
-			};
-		}).entries(csv_data);
-		data.sort(function(a,b){return a.value.rank - b.value.rank});
-		data.reverse();
-		// console.log(data);
-		var step;
-		for (step=1; step<data.length; step++){
-			obj = {
-				name: data[step-1].key,
-				rank: step,
-				country: data[step-1].value.country,
-				website: data[step-1].value.website,
-				lat: 46.0,
-				lng: 6.0
-			};
-			l.push(obj);
+		var filtered_data = csv_data;
+        if (countryFilter != 'All') {
+            filtered_data = filtered_data.filter(function (d) {
+                return countryFilter.indexOf(d.Country) != -1;
+            });
+        }
+        if (degreeFilter != 'All') {
+            filtered_data = filtered_data.filter(function (d) {
+                return d.degree_type == degreeFilter.toLowerCase();
+            });
+        }
+
+		if (domainFilter != 'All'){
+			filtered_data = filtered_data.filter(function (d) {
+				return d.subject == domainFilter.toLowerCase();
+			});
 		}
+
+		var data = d3
+			.nest()
+			.key(function(entry){return entry.University;})
+			.rollup(function(entries){
+				// console.log(entries)
+				return {"rank": d3.sum(entries, function(g){return g.weighted_inv_rank;}),
+						// "country": entries.length,
+						"country": entries[0].Country,
+						"website": entries[0].domain
+				};
+			}).entries(filtered_data);
+			data.sort(function(a,b){return a.value.rank - b.value.rank});
+			data.reverse();
+			// console.log(data);
+			var step;
+			for (step=1; step<data.length; step++){
+				obj = {
+					name: data[step-1].key,
+					rank: step,
+					country: data[step-1].value.country,
+					website: data[step-1].value.website,
+					lat: 46.0,
+					lng: 6.0
+				};
+				l.push(obj);
+			}
 	});
 
 
