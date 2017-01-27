@@ -1,0 +1,56 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('../font/Roboto-Thin.eot');
+	src: url('../font/Roboto-Thin.eot?#iefix') format('embedded-opentype'),
+		url('../font/Roboto-Thin.woff2') format('woff2'),
+		url('../font/Roboto-Thin.woff') format('woff'),
+		url('../font/Roboto-Thin.ttf') format('truetype'),
+		url('../font/Roboto-Thin.svg#Roboto-Thin') format('svg');
+	font-weight: 100;
+	font-style: normal;
+}
+
+svg {
+    touch-action: none;
+}
+
+.jvectormap-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+}
+
+.jvectormap-tip {
+    position: absolute;
+    display: none;
+    border: solid 1px #9999ff;
+    border-radius: 3px;
+    background: #000033;
+    color: #bbbbff;
+	font-weight: bold;
+    font-family: Roboto;
+    font-size: smaller;
+    padding: 3px;
+}
+
+.jvectormap-goback {
+    position: absolute;
+    left: 10px;
+    border-radius: 3px;
+    background: #292929;
+    padding: 6px;
+    color: red;
+    cursor: pointer;
+    line-height: 10px;
+    text-align: center;
+    box-sizing: content-box;
+    bottom: 10px;
+    z-index: 1000;
+}
+
+.jvectormap-zoomin, .jvectormap-zoomout {
+    width: 0;
+    height: 0;
+}
