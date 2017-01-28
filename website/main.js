@@ -278,7 +278,7 @@ doc.ready (function (e) {
 	// When loading page, open about modale window which explains the project in a couple of sentances
 
 	// switchState()
-	var inst = $('[data-remodal-id=modal]').remodal();
+	var inst = $('[data-remodal-id=modal-about]').remodal();
 	inst.open();
 	
 });
@@ -403,7 +403,7 @@ function SlideLeaderboard (slideIn, callback = null) {
 	else {
 		
 		leaderboardShown = false;
-		topButtons.attr ('class', 'swipeUp');
+		topButtons.attr ('class', 'swipeLeft');
 		
 	}
 

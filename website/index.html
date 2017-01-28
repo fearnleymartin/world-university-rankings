@@ -4,6 +4,8 @@
   <title>Rank Academy</title>
   <link rel="icon" href="icon.ico" />
   <link rel="stylesheet" href="jvectormap/jquery-jvectormap.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="assets/Remodal-master/Remodal-master/dist/remodal.css">
+  <link rel="stylesheet" href="assets/Remodal-master/Remodal-master/dist/remodal-default-theme.css">
   <link rel="stylesheet" href="main.css" type="text/css" media="screen"/>
   <script src="jquery/jquery.js"></script>
   <script src="jvectormap/jquery-jvectormap.js"></script>
@@ -11,24 +13,42 @@
   <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
   <script src="main.js"></script>
 
-  <link rel="stylesheet" href="assets/Remodal-master/Remodal-master/dist/remodal.css">
-  <link rel="stylesheet" href="assets/Remodal-master/Remodal-master/dist/remodal-default-theme.css">
 
 </head>
 <body>
 
-	<div class="remodal" data-remodal-id="modal">
+	<div class="remodal" data-remodal-id="modal-about">
 	  <button data-remodal-action="close" class="remodal-close"></button>
 	  <h1>Alternative University Rankings Project</h1>
 	  <p>
-		In this project, our aim is to study how the world's universities are represented in Google's search results. We would like to know which universities are very easy to find on the internet and which are not, which university websites are considered to have a good reputation by Google and which are not.
+		In this project, our aim is to study how present the world's universities are in Google's search results. We would like to know which universities are very visible on the internet and which are not, which university websites are considered to have a good reputation by Google and which are not.
 	  </p>
 	  <p>
-		  We then use the data gathered to build an alternative university ranking, based on the universities' search engine visibility. The initial intuition behind the idea is that traditional rankings measure how many times a university's publications are cited, and we transpose this idea to Google search results where one of the key criteria for ranking websites is how many other websites link to the website in question (page rank).
+		  We then use the data gathered to build an alternative university ranking, based on the universities' search engine visibility. The initial intuition behind the idea is that traditional rankings measure how many times a university's publications are cited, and we transpose this idea to Google search results where one of the key criteria for ranking a website is how many other websites link to the website in question (page rank).
 	  </p>
 		<p>For more details on the methodology used, see the following <a href="https://git.io/vDfFy" target="_blank">notebook</a>.</p>
 		<br>
 		<button data-remodal-action="confirm" class="remodal-confirm">Go to rankings</button>
+	</div>
+
+	<div class="remodal remodal-large" data-remodal-id="modal-analysis">
+	  <button data-remodal-action="close" class="remodal-close"></button>
+	  <h1>Comparaison with Shanghai rankings</h1>
+	  <p>
+		  The overlap between the first hundred universities of the <a href="www.shanghairanking.com/" target="_blank">Shanghai rankings</a> and of our ranking contains 44 universities. In general the two rankings are reasonably similar. For example, the entire top 5 of the Shanghai ranking is present in our ranking, where the University of California and Stanford University even appear in the top 5. We think it is interesting that we get similar results to the Shanghai ranking simply by looking which universities are the most represented in Google's search results.
+	  </p>
+	  <p>
+		  The figure below shows the difference in rankings between the universities present in both rankings.
+		  <img src="assets/comp_graph.JPG" style="max-width: 100%;height: auto;}">
+	  </p>
+		<h1>Country by country breakdown</h1>
+		<p>Our rankings are heavily domainated by English speaking universities. On the one hand, this could have been expected because all of the search queries we use are in English. On the other hand though, many universities have websites in English and so should not be penalised so much in theory. However, as we were using google.com , it is possible that American websites were inherently favoured by the search algorithm.</p>
+		<p>Nevertheless a grand total of 74 countries make it into our rankings. The figure below shows the breakdown country by country.
+			<img src="assets/countries.JPG" style="max-width: 100%;height: auto;}">
+		</p>
+
+		<br>
+		<button data-remodal-action="confirm" class="remodal-confirm">Close</button>
 	</div>
 
 	<div id="colorizer">
@@ -63,11 +83,12 @@
 		
 			<button id="allFilter" class="filterButton" onclick="chooseFilterAll ();">ALL</button>
 			
-			<div id="topButtons" class="swipeUp">
+			<div id="topButtons" class="swipeLeft">
 			
 				<div id="filter" onclick="startFilter ();">Filter</div>
 				<!--<a id="about" href="#modal">About</a>-->
-				<div id="about" onclick="var inst = $('[data-remodal-id=modal]').remodal();inst.open();">About</div>
+				<div id="about" onclick="var inst = $('[data-remodal-id=modal-about]').remodal();inst.open();">About</div>
+				<div id="analysis" onclick="var inst = $('[data-remodal-id=modal-analysis]').remodal();inst.open();">Analysis</div>
 				
 			</div>
 
