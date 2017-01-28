@@ -5,15 +5,10 @@ subject + postgraduate
 Comments: gives mainly university websites
 
 Type 2: General university keywords/top universities
-comments: tends to give sites that talk aout universities but not actual university websites
+comments: tends to give sites that talk about universities but not actual university websites
 
 Type 3: Question keywords
 comments: same as type 2
-
-Type 4: Country specific keywords
-
-
-Type 5: 
 
 
 Comments:
