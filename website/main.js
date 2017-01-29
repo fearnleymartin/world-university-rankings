@@ -15,6 +15,7 @@ var topButtons;
 
 var allFilter;
 var degreeSelection;
+var rankingTitle;
 
 // Filters
 
@@ -77,6 +78,7 @@ doc.ready (function (e) {
 	
 	allFilter = $('#allFilter');
 	degreeSelection = $('#degreeSelection');
+	rankingTitle = $('#rankingTitle');
 	
 	// Creating the world map
 	
@@ -387,7 +389,7 @@ function getNewLeaderboard () {
 function SlideLeaderboard (slideIn, callback = null) {
 	
 	if (slideIn == leaderboardShown || maxRank == 0) {
-		
+
 		leaderboardShown = slideIn;
 		
 		if (callback != null)
@@ -397,10 +399,27 @@ function SlideLeaderboard (slideIn, callback = null) {
 		
 	}
 	
-	if (slideIn)
+	if (slideIn){
+	    if (countryFilter == 'All' || countryFilter == '')
+	        rankingCountries = 'over the world';
+	    else
+	        rankingCountries = 'in ' + countryFilter;
+
+	    if (domainFilter == 'All')
+	        rankingDomain = '';
+	    else
+	        rankingDomain = 'in ' + domainFilter;
+
+	    if (degreeFilter == 'All')
+	        rankingDegree = '';
+	    else
+	        rankingDegree = 'for ' + degreeFilter + "'s"
+
+	    rankingTitle.text('University ranking ' + rankingDegree + ' ' + rankingDomain + ' ' + rankingCountries);
+	    rankingTitle.css('display','block');
 		leaderboardShown = true;
-	else {
-		
+	}else {
+		rankingTitle.css('display','none');
 		leaderboardShown = false;
 		topButtons.attr ('class', 'swipeUp');
 		

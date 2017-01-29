@@ -90,7 +90,6 @@ body {
 	opacity: 0;
 	animation-delay: 0.66s;
 	-webkit-animation-delay: 0.66s;
-	
 }
 
 #panel {
@@ -255,6 +254,11 @@ body {
 	opacity: 0;
 	pointer-events: none;
 	
+}
+
+p#rankingTitle {
+    display: none;
+    color: white;
 }
 
 #degreeSelection {
