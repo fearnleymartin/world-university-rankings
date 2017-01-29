@@ -10,7 +10,7 @@
   <script src="jquery/jquery.js"></script>
   <script src="jvectormap/jquery-jvectormap.js"></script>
   <script src="jvectormap/jquery-jvectormap-world-mill.js"></script>
-  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="d3/d3.min.js"></script>
   <script src="main.js"></script>
 
 
@@ -86,16 +86,15 @@
 			</div>
 		
 			<button id="allFilter" class="filterButton" onclick="chooseFilterAll ();">ALL</button>
-			
-			<div id="topButtons" class="swipeLeft">
-			
-				<div id="filter" onclick="startFilter ();">Filter</div>
-				<!--<a id="about" href="#modal">About</a>-->
-				<div id="about" onclick="var inst = $('[data-remodal-id=modal-about]').remodal();inst.open();">About</div>
-				<div id="analysis" onclick="var inst = $('[data-remodal-id=modal-analysis]').remodal();inst.open();">Analysis</div>
-				
-			</div>
 
+		</div>
+			
+		<div id="topButtons" class="swipeDown">
+		
+			<div id="filter" class="topButton" onclick="startFilter ();">Filter</div>
+			<div id="about" class="topButton" onclick="var inst = $('[data-remodal-id=modal-about]').remodal();inst.open();">About</div>
+			<div id="analysis" class="topButton" onclick="var inst = $('[data-remodal-id=modal-analysis]').remodal();inst.open();">Analysis</div>
+			
 		</div>
 
 		<div id="bottom" class="swipeUp">

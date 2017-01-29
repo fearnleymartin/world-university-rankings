@@ -274,12 +274,6 @@ doc.ready (function (e) {
 		refreshLeaderboardEntries ();
 		
 	});
-
-	// When loading page, open about modale window which explains the project in a couple of sentances
-
-	// switchState()
-	var inst = $('[data-remodal-id=modal-about]').remodal();
-	inst.open();
 	
 });
 
@@ -391,9 +385,13 @@ function getNewLeaderboard () {
 
 function SlideLeaderboard (slideIn, callback = null) {
 	
-	if (slideIn == leaderboardShown) {
+	if (slideIn == leaderboardShown || maxRank == 0) {
 		
-		callback ();
+		leaderboardShown = slideIn;
+		
+		if (callback != null)
+			callback ();
+		
 		return;
 		
 	}
@@ -403,7 +401,7 @@ function SlideLeaderboard (slideIn, callback = null) {
 	else {
 		
 		leaderboardShown = false;
-		topButtons.attr ('class', 'swipeLeft');
+		topButtons.attr ('class', 'swipeUp');
 		
 	}
 
@@ -455,7 +453,24 @@ function startFilter () {
 
 function showFilterPanel () {
 	
-	colorizer.attr ('class', 'hueRed2Green');
+	if (currentState == false) {
+		
+		currentState = true;
+		
+		panel.css ('pointer-events', 'auto');
+		bottomText.html ('Map');
+			
+		map.attr ('class', 'blurIn');
+		panel.attr ('class', 'panelBlurOut');
+		colorizer.attr ('class', 'hueBlue2Green');
+		
+	} else {
+	
+		colorizer.attr ('class', 'hueRed2Green');
+	
+	}
+	
+	topButtons.attr ('class', 'swipeUp');
 	
 	allFilter.css ('pointer-events', 'auto');
 	allFilter.attr ('class', 'filterButton panelBlurOut');
@@ -592,7 +607,20 @@ function filterComplete () {
 	setTimeout (function () {
 		
 		bottom.attr ('class', 'swipeUp');
-		switchState ();
+		
+		leaderboard = getRankedUniversities ();
+		
+		currentState = false;
+		
+		panel.css ('pointer-events', 'none');
+		bottomText.html ('Rankings');
+		
+		map.attr ('class', 'blurOut'); 
+		panel.attr ('class', 'panelBlurIn');
+		colorizer.attr ('class', 'hueGreen2Blue');
+		
+		topButtons.attr ('class', 'swipeDown');
+		
 		transitioning = false;
 		
 	}, 1200);
@@ -691,10 +719,11 @@ function getRankedUniversities () {
 	var l=[];
 
 	// Load and aggregate data depending on filters
-	d3.csv('data/data.csv', function(csv_data){
+	d3.csv('./data/data.csv', function(csv_data){
 
 		// Filter on country, degree or domain
 		var filtered_data = csv_data;
+		
         if (countryFilter != 'All') {
             filtered_data = filtered_data.filter(function (d) {
                 return countryFilter.indexOf(d.Country) != -1;

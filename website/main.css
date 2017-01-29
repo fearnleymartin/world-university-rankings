@@ -19,7 +19,8 @@ body {
 #map {
 	
 	width: 100vw;
-	height: 92vh;
+	margin-top: 10vh;
+	height: 80vh;
 	
 }
 
@@ -194,63 +195,39 @@ body {
 	
 }
 
-#filter {
+.topButton {
 	
+	top: 0;
 	position: absolute;
-	left: -5px;
-	top: -5px;
-	width: 10vw;
-	height: 8vh;
+	width: 34vw;
+	height: 5vh;
 	font-family: Roboto;
 	font-size: 3vh;
 	text-align: center;
 	background: rgba(0, 0, 80, 0.5);
 	color: #5555ff;
-	line-height: 8vh;
-	border-radius: 5px;
+	line-height: 5vh;
 	cursor: pointer;
 	border-style: solid;
     border-width: 1px;
+	
+}
+
+#filter {
+	
+	left: -1vw;
 	
 }
 
 #about {
 
-	position: absolute;
-	right: -5px;
-	top: -5px;
-	width: 10vw;
-	height: 8vh;
-	font-family: Roboto;
-	font-size: 3vh;
-	text-align: center;
-	background: rgba(0, 0, 80, 0.5);
-	color: #5555ff;
-	line-height: 8vh;
-	border-radius: 5px;
-	cursor: pointer;
-	border-style: solid;
-    border-width: 1px;
+	right: -1vw;
 
 }
 
 #analysis {
 
-	position: absolute;
-	right: -5px;
-	top: 50px;
-	width: 10vw;
-	height: 8vh;
-	font-family: Roboto;
-	font-size: 3vh;
-	text-align: center;
-	background: rgba(0, 0, 80, 0.5);
-	color: #5555ff;
-	line-height: 8vh;
-	border-radius: 5px;
-	cursor: pointer;
-	border-style: solid;
-    border-width: 1px;
+	left: 33vw;
 
 }
 
@@ -443,13 +420,6 @@ body {
 	
 	animation: hue-red2green 0.5s ease-in-out forwards;
 	-webkit-animation: hue-red2green 0.5s ease-in-out forwards;
-	
-}
-
-.hueGreen2red {
-	
-	animation: hue-green2red 0.5s ease-in-out forwards;
-	-webkit-animation: hue-green2red 0.5s ease-in-out forwards;
 	
 }
 
@@ -856,6 +826,46 @@ body {
 	
 }
 
+@-webkit-keyframes hue-blue2green {
+	
+    from {
+		-webkit-filter: hue-rotate(0deg);
+		-moz-filter: hue-rotate(0deg);
+		-o-filter: hue-rotate(0deg);
+		-ms-filter: hue-rotate(0deg);
+		filter: hue-rotate(0deg);
+	}
+	
+    to {
+		-webkit-filter: hue-rotate(-120deg);
+		-moz-filter: hue-rotate(-120deg);
+		-o-filter: hue-rotate(-120deg);
+		-ms-filter: hue-rotate(-120deg);
+		filter: hue-rotate(-120deg);
+	}
+	
+}
+
+@keyframes hue-blue2green {
+	
+    from {
+		-webkit-filter: hue-rotate(0deg);
+		-moz-filter: hue-rotate(0deg);
+		-o-filter: hue-rotate(0deg);
+		-ms-filter: hue-rotate(0deg);
+		filter: hue-rotate(0deg);
+	}
+	
+    to {
+		-webkit-filter: hue-rotate(-120deg);
+		-moz-filter: hue-rotate(-120deg);
+		-o-filter: hue-rotate(-120deg);
+		-ms-filter: hue-rotate(-120deg);
+		filter: hue-rotate(-120deg);
+	}
+	
+}
+
 @-webkit-keyframes hue-green2blue {
 	
     from {
@@ -1203,7 +1213,7 @@ body {
 @-webkit-keyframes from-domain {
 	
     from {
-		top: 10vh;
+		top: 9vh;
 		width: 56vw;
 		left: 22vw;
 		-ms-transform: scale(1);
@@ -1215,7 +1225,7 @@ body {
 	}
 	
     to {
-		top: 10vh;
+		top: 9vh;
 		width: 56vw;
 		left: 22vw;
 		-ms-transform: scale(0.9);
@@ -1231,7 +1241,7 @@ body {
 @keyframes from-domain {
 	
     from {
-		top: 10vh;
+		top: 9vh;
 		width: 56vw;
 		left: 22vw;
 		-ms-transform: scale(1);
@@ -1243,7 +1253,7 @@ body {
 	}
 	
     to {
-		top: 10vh;
+		top: 9vh;
 		width: 56vw;
 		left: 22vw;
 		-ms-transform: scale(0.9);

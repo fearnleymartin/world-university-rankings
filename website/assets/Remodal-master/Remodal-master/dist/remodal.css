@@ -79,9 +79,8 @@ html.remodal-is-locked {
 
 .remodal {
   position: relative;
-
+  font-family: 'Roboto';
   outline: none;
-
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
