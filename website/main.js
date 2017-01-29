@@ -757,11 +757,11 @@ function getRankedUniversities () {
 
 		if (domainFilter != 'All'){
 			filtered_data = filtered_data.filter(function (d) {
-				return d.subject == domainFilter.toLowerCase();
+				return d.subject.toLowerCase() == domainFilter.toLowerCase().replace('&','and');
 			});
 		}
 
-		// Groupo data by university and sum up the rankings
+		// Group data by university and sum up the rankings
 		var data = d3
 			.nest()
 			.key(function(entry){return entry.University;})
