@@ -149,7 +149,8 @@ doc.ready (function (e) {
 			
 			initial: {
 				
-				'font-family': 'Roboto'
+				'font-family': 'Roboto',
+				'font-size' : '10px'
 				
 			}
 			
