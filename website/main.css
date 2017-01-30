@@ -92,6 +92,16 @@ body {
 	-webkit-animation-delay: 0.66s;
 }
 
+.legend_text {
+    color: white;
+    margin: 0px;
+    font-family: Roboto;
+}
+
+.legend_bar {
+    float: left
+}
+
 #panel {
 	
 	position: absolute;

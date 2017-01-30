@@ -8,6 +8,8 @@ var map;
 var panel;
 var scrollElements;
 
+var legend;
+
 var bottom;
 var bottomText;
 
@@ -70,6 +72,8 @@ doc.ready (function (e) {
 	colorizer = $('#colorizer');
 	
 	map = $('#map');
+
+	legend = $('#legend')
 	
 	panel = $('#panel');
 	scrollElements = $('.scrollElement');
@@ -229,6 +233,8 @@ doc.ready (function (e) {
 		refreshLeaderboardEntries ();
 		
 	});
+
+	create_legend()
 	
 });
 
@@ -237,6 +243,7 @@ doc.ready (function (e) {
 function switchState () {
 			
 	if (currentState) {
+	    show_legend()
 		
 		if (leaderboardDirty)
 			leaderboard = getRankedUniversities ();
@@ -266,6 +273,7 @@ function switchState () {
 		panel.css ('pointer-events', 'auto');
 		bottomText.html ('Map');
 			
+		hide_legend()
 		map.attr ('class', 'blurIn');
 		panel.attr ('class', 'panelBlurOut');
 		colorizer.attr ('class', 'hueBlue2Red');
@@ -424,6 +432,7 @@ function startFilter () {
 // Terminates transition to filter selection panel
 
 function showFilterPanel () {
+    hide_legend()
 	
 	if (currentState == false) {
 		
@@ -549,6 +558,7 @@ function switchToFilterDomain () {
 // Filter completed : transition back to the map
 
 function filterComplete () {
+    show_legend()
 	
 	allFilter.css ('pointer-events', 'none');
 	leaderboardDirty = true;
@@ -670,8 +680,8 @@ function refreshMapPins () {
 		var entry = leaderboard [i];
 		mapObject.addMarker (i, {name: i+1 + '. ' + entry.name, latLng: [entry.lat, entry.lng], style: {
 		
-			fill: (i < 10 ? top10Gradient[i] : restGradient[i-10]),
-			r: 5 + 11/(i+1)
+			fill: (i < 10) ? top10Gradient[i] : (i < restGradient.length) ? restGradient[i-10] : restGradient[restGradient.length-1],
+			r: 4 + 10*Math.exp(-i*0.2)
 			
 		}});
 	
@@ -750,4 +760,54 @@ function getRankedUniversities () {
 	
 	return l;
 	
+}
+
+function create_legend () {
+    legend.width(0.25*(top10Gradient.length + restGradient.length)+20 + 'px')
+    legend.height('30px')
+
+    var $legend_text = $("<div>")
+    $legend_text.width(0.25*(top10Gradient.length + restGradient.length)+20 + 'px')
+    $legend_text.height('15px')
+
+    var $child = $("<p class='legend_text'>").text("high ranked")
+    $child.css('float','left');
+    $legend_text.append($child)
+
+    var $child = $("<p class='legend_text'>").text("low ranked")
+    $child.css('float','right');
+    $legend_text.append($child)
+
+    var $legend_bar = $("<div>")
+    $legend_bar.width(0.25*(top10Gradient.length + restGradient.length) + 'px')
+    $legend_bar.height('15px')
+    $legend_bar.css('margin-top','5px')
+    $legend_bar.css('margin-left','10px')
+
+    for (i=0;i<top10Gradient.length;i++){
+            var $child = $("<div class='legend_bar'>");
+            $child.width('0.25px');
+            $child.height('15px');
+            $child.css("background-color", top10Gradient[i]);
+            $legend_bar.append($child);
+        }
+
+    for (i=0;i<restGradient.length;i++){
+        var $child = $("<div class='legend_bar'>");
+        $child.width('0.25px');
+        $child.height('15px');
+        $child.css("background-color", restGradient[i]);
+        $legend_bar.append($child);
+    }
+
+    legend.append($legend_text)
+    legend.append($legend_bar)
+}
+
+function hide_legend () {
+    legend.css('display', 'none')
+}
+
+function show_legend() {
+    legend.css('display', 'block')
 }
