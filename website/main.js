@@ -681,7 +681,7 @@ function refreshMapPins () {
 		mapObject.addMarker (i, {name: i+1 + '. ' + entry.name, latLng: [entry.lat, entry.lng], style: {
 		
 			fill: (i < 10) ? top10Gradient[i] : (i < restGradient.length) ? restGradient[i-10] : restGradient[restGradient.length-1],
-			r: 4 + 10*Math.exp(-i*0.2)
+			r: 4 + 6.5*Math.exp(-i*0.1)
 			
 		}});
 	
