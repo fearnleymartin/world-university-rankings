@@ -777,7 +777,7 @@ function getRankedUniversities () {
 			// console.log(data);
             // Build ranking to return to leaderboard
 			var step;
-			for (step=1; step<=100; step++){
+			for (step=1; step<=data.length; step++){
 				obj = {
 					name: data[step-1].key,
 					rank: step,
@@ -788,11 +788,12 @@ function getRankedUniversities () {
 				};
 				l.push(obj);
 			}
+		setTimeout (function () {
+		refreshMapPins ();
+		}, 100);
 	});
 	
-	setTimeout (function () {
-		refreshMapPins ();
-	}, 100);
+
 	
 	return l;
 	
