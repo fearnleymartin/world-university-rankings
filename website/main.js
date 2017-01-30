@@ -17,6 +17,9 @@ var allFilter;
 var degreeSelection;
 var rankingTitle;
 
+// Gradients
+var top10Gradient = ["#FFCC00", "#F5C90E", "#EBC61D", "#E1C32C", "#D7C03B", "#CDBD49", "#C3BA58", "#B9B767", "#AFB476", "#A6B185"];
+var restGradient = ["#A6B185", "#A5B085", "#A5B085", "#A5B085", "#A5B085", "#A5B085", "#A5B085", "#A5B085", "#A5B085", "#A5B086", "#A5B086", "#A5B086", "#A5B086", "#A4B086", "#A4B086", "#A4B086", "#A4B086", "#A4B086", "#A4B087", "#A4B087", "#A4B087", "#A4B087", "#A4B087", "#A4B087", "#A4B087", "#A3B087", "#A3B088", "#A3B088", "#A3B088", "#A3B088", "#A3B088", "#A3B088", "#A3B088", "#A3B088", "#A3B088", "#A3B089", "#A3B089", "#A3B089", "#A2B089", "#A2B089", "#A2B089", "#A2B089", "#A2B089", "#A2AF8A", "#A2AF8A", "#A2AF8A", "#A2AF8A", "#A2AF8A", "#A2AF8A", "#A2AF8A", "#A1AF8A", "#A1AF8A", "#A1AF8B", "#A1AF8B", "#A1AF8B", "#A1AF8B", "#A1AF8B", "#A1AF8B", "#A1AF8B", "#A1AF8B", "#A1AF8C", "#A1AF8C", "#A1AF8C", "#A0AF8C", "#A0AF8C", "#A0AF8C", "#A0AF8C", "#A0AF8C", "#A0AF8C", "#A0AF8D", "#A0AF8D", "#A0AF8D", "#A0AF8D", "#A0AF8D", "#A0AF8D", "#9FAF8D", "#9FAF8D", "#9FAF8E", "#9FAF8E", "#9FAF8E", "#9FAF8E", "#9FAF8E", "#9FAF8E", "#9FAF8E", "#9FAF8E", "#9FAF8E", "#9FAE8F", "#9FAE8F", "#9EAE8F", "#9EAE8F", "#9EAE8F", "#9EAE8F", "#9EAE8F", "#9EAE8F", "#9EAE90", "#9EAE90", "#9EAE90", "#9EAE90", "#9EAE90", "#9EAE90", "#9DAE90", "#9DAE90", "#9DAE90", "#9DAE91", "#9DAE91", "#9DAE91", "#9DAE91", "#9DAE91", "#9DAE91", "#9DAE91", "#9DAE91", "#9DAE92", "#9DAE92", "#9CAE92", "#9CAE92", "#9CAE92", "#9CAE92", "#9CAE92", "#9CAE92", "#9CAE92", "#9CAE93", "#9CAE93", "#9CAE93", "#9CAE93", "#9CAE93", "#9BAE93", "#9BAE93", "#9BAE93", "#9BAD94", "#9BAD94", "#9BAD94", "#9BAD94", "#9BAD94", "#9BAD94", "#9BAD94", "#9BAD94", "#9BAD94", "#9BAD95", "#9AAD95", "#9AAD95", "#9AAD95", "#9AAD95", "#9AAD95", "#9AAD95", "#9AAD95", "#9AAD96", "#9AAD96", "#9AAD96", "#9AAD96", "#9AAD96", "#99AD96", "#99AD96", "#99AD96", "#99AD96", "#99AD97", "#99AD97", "#99AD97", "#99AD97", "#99AD97", "#99AD97", "#99AD97", "#99AD97", "#99AD98", "#98AD98", "#98AD98", "#98AD98", "#98AD98", "#98AD98", "#98AD98", "#98AD98", "#98AD98", "#98AC99", "#98AC99", "#98AC99", "#98AC99", "#97AC99", "#97AC99", "#97AC99", "#97AC99", "#97AC9A", "#97AC9A", "#97AC9A", "#97AC9A", "#97AC9A", "#97AC9A", "#97AC9A", "#97AC9A", "#96AC9A", "#96AC9B", "#96AC9B", "#96AC9B", "#96AC9B", "#96AC9B", "#96AC9B", "#96AC9B", "#96AC9B", "#96AC9C", "#96AC9C", "#96AC9C", "#96AC9C", "#95AC9C", "#95AC9C", "#95AC9C", "#95AC9C", "#95AC9C", "#95AC9D", "#95AC9D", "#95AC9D", "#95AC9D", "#95AC9D", "#95AC9D", "#95AC9D", "#94AC9D", "#94AB9E", "#94AB9E", "#94AB9E", "#94AB9E", "#94AB9E", "#94AB9E", "#94AB9E", "#94AB9E", "#94AB9E", "#94AB9F", "#94AB9F", "#94AB9F", "#93AB9F", "#93AB9F", "#93AB9F", "#93AB9F", "#93AB9F", "#93ABA0", "#93ABA0", "#93ABA0", "#93ABA0", "#93ABA0", "#93ABA0", "#93ABA0", "#92ABA0", "#92ABA0", "#92ABA1", "#92ABA1", "#92ABA1", "#92ABA1", "#92ABA1", "#92ABA1", "#92ABA1", "#92ABA1", "#92ABA2", "#92ABA2", "#92ABA2", "#91ABA2", "#91ABA2", "#91ABA2", "#91ABA2", "#91ABA2", "#91ABA2", "#91AAA3", "#91AAA3", "#91AAA3", "#91AAA3", "#91AAA3", "#91AAA3", "#90AAA3", "#90AAA3", "#90AAA3", "#90AAA4", "#90AAA4", "#90AAA4", "#90AAA4", "#90AAA4", "#90AAA4", "#90AAA4", "#90AAA4", "#90AAA5", "#90AAA5", "#8FAAA5", "#8FAAA5", "#8FAAA5", "#8FAAA5", "#8FAAA5", "#8FAAA5", "#8FAAA5", "#8FAAA6", "#8FAAA6", "#8FAAA6", "#8FAAA6", "#8FAAA6", "#8EAAA6", "#8EAAA6", "#8EAAA6", "#8EAAA7", "#8EAAA7", "#8EAAA7", "#8EAAA7", "#8EAAA7", "#8EAAA7", "#8EAAA7", "#8EAAA7", "#8EAAA7", "#8EA9A8", "#8DA9A8", "#8DA9A8", "#8DA9A8", "#8DA9A8", "#8DA9A8", "#8DA9A8", "#8DA9A8", "#8DA9A9", "#8DA9A9", "#8DA9A9", "#8DA9A9", "#8DA9A9", "#8CA9A9", "#8CA9A9", "#8CA9A9", "#8CA9A9", "#8CA9AA", "#8CA9AA", "#8CA9AA", "#8CA9AA", "#8CA9AA", "#8CA9AA", "#8CA9AA", "#8CA9AA", "#8CA9AB", "#8BA9AB", "#8BA9AB", "#8BA9AB", "#8BA9AB", "#8BA9AB", "#8BA9AB", "#8BA9AB", "#8BA9AB", "#8BA9AC", "#8BA9AC", "#8BA9AC", "#8BA9AC", "#8AA9AC", "#8AA9AC", "#8AA9AC", "#8AA9AC", "#8AA8AD", "#8AA8AD", "#8AA8AD", "#8AA8AD", "#8AA8AD", "#8AA8AD", "#8AA8AD", "#8AA8AD", "#89A8AD", "#89A8AE", "#89A8AE", "#89A8AE", "#89A8AE", "#89A8AE", "#89A8AE", "#89A8AE", "#89A8AE", "#89A8AF", "#89A8AF", "#89A8AF", "#89A8AF", "#88A8AF", "#88A8AF", "#88A8AF", "#88A8AF", "#88A8AF", "#88A8B0", "#88A8B0", "#88A8B0", "#88A8B0", "#88A8B0", "#88A8B0", "#88A8B0", "#87A8B0", "#87A8B1", "#87A8B1", "#87A8B1", "#87A8B1", "#87A8B1", "#87A8B1", "#87A8B1", "#87A8B1", "#87A8B1", "#87A7B2", "#87A7B2", "#87A7B2", "#86A7B2", "#86A7B2", "#86A7B2", "#86A7B2", "#86A7B2", "#86A7B3", "#86A7B3", "#86A7B3", "#86A7B3", "#86A7B3", "#86A7B3", "#86A7B3", "#85A7B3", "#85A7B3", "#85A7B4", "#85A7B4", "#85A7B4", "#85A7B4", "#85A7B4", "#85A7B4", "#85A7B4", "#85A7B4", "#85A7B5", "#85A7B5", "#85A7B5", "#84A7B5", "#84A7B5", "#84A7B5", "#84A7B5", "#84A7B5", "#84A7B5", "#84A7B6", "#84A7B6", "#84A7B6", "#84A7B6", "#84A7B6", "#84A7B6", "#83A7B6", "#83A7B6", "#83A6B7", "#83A6B7", "#83A6B7", "#83A6B7", "#83A6B7", "#83A6B7", "#83A6B7", "#83A6B7", "#83A6B7", "#83A6B8", "#83A6B8", "#82A6B8", "#82A6B8", "#82A6B8", "#82A6B8", "#82A6B8", "#82A6B8", "#82A6B9", "#82A6B9", "#82A6B9", "#82A6B9", "#82A6B9", "#82A6B9", "#81A6B9", "#81A6B9", "#81A6B9", "#81A6BA", "#81A6BA", "#81A6BA", "#81A6BA", "#81A6BA", "#81A6BA", "#81A6BA", "#81A6BA", "#81A6BB", "#81A6BB", "#80A6BB", "#80A6BB", "#80A6BB", "#80A6BB", "#80A6BB", "#80A6BB", "#80A6BB", "#80A5BC", "#80A5BC", "#80A5BC", "#80A5BC", "#80A5BC", "#7FA5BC", "#7FA5BC", "#7FA5BC", "#7FA5BD", "#7FA5BD", "#7FA5BD", "#7FA5BD", "#7FA5BD", "#7FA5BD", "#7FA5BD", "#7FA5BD", "#7FA5BD", "#7FA5BE", "#7EA5BE", "#7EA5BE", "#7EA5BE", "#7EA5BE", "#7EA5BE", "#7EA5BE", "#7EA5BE", "#7EA5BF", "#7EA5BF", "#7EA5BF", "#7EA5BF", "#7EA5BF", "#7DA5BF", "#7DA5BF", "#7DA5BF", "#7DA5BF", "#7DA5C0", "#7DA5C0", "#7DA5C0", "#7DA5C0", "#7DA5C0", "#7DA5C0", "#7DA5C0", "#7DA5C0", "#7DA5C1", "#7DA5C1", "#7CA4C1", "#7CA4C1", "#7CA4C1", "#7CA4C1", "#7CA4C1", "#7CA4C1", "#7CA4C1", "#7CA4C1", "#7CA4C2", "#7CA4C2", "#7CA4C2", "#7CA4C2", "#7BA4C2", "#7BA4C2", "#7BA4C2", "#7BA4C2", "#7BA4C3", "#7BA4C3", "#7BA4C3", "#7BA4C3", "#7BA4C3", "#7BA4C3", "#7BA4C3", "#7BA4C3", "#7BA4C4", "#7AA4C4", "#7AA4C4", "#7AA4C4", "#7AA4C4", "#7AA4C4", "#7AA4C4", "#7AA4C4", "#7AA4C5", "#7AA4C5", "#7AA4C5", "#7AA4C5", "#7AA4C5", "#7AA4C5", "#79A4C5", "#79A4C5", "#79A4C5", "#79A4C6", "#79A3C6", "#79A3C6", "#79A3C6", "#79A3C6", "#79A3C6", "#79A3C6", "#79A3C6", "#79A3C7", "#79A3C7", "#78A3C7", "#78A3C7", "#78A3C7", "#78A3C7", "#78A3C7", "#78A3C7", "#78A3C8", "#78A3C8", "#78A3C8", "#78A3C8", "#78A3C8", "#78A3C8", "#77A3C8", "#77A3C8", "#77A3C9", "#77A3C9", "#77A3C9", "#77A3C9", "#77A3C9", "#77A3C9", "#77A3C9", "#77A3C9", "#77A3C9", "#77A3CA", "#77A3CA", "#76A3CA", "#76A3CA", "#76A3CA", "#76A3CA", "#76A3CA", "#76A3CA", "#76A3CB", "#76A3CB", "#76A3CB", "#76A2CB", "#76A2CB", "#76A2CB", "#76A2CB", "#75A2CB", "#75A2CC", "#75A2CC", "#75A2CC", "#75A2CC", "#75A2CC", "#75A2CC", "#75A2CC", "#75A2CC", "#75A2CD", "#75A2CD", "#75A2CD", "#75A2CD", "#74A2CD", "#74A2CD", "#74A2CD", "#74A2CD", "#74A2CD", "#74A2CE", "#74A2CE", "#74A2CE", "#74A2CE", "#74A2CE", "#74A2CE", "#74A2CE", "#73A2CE", "#73A2CF", "#73A2CF", "#73A2CF", "#73A2CF", "#73A2CF", "#73A2CF", "#73A2CF", "#73A2CF", "#73A2D0", "#73A2D0", "#73A2D0", "#73A2D0", "#72A1D0", "#72A1D0", "#72A1D0", "#72A1D0", "#72A1D1", "#72A1D1", "#72A1D1", "#72A1D1", "#72A1D1", "#72A1D1", "#72A1D1", "#72A1D1", "#72A1D1", "#71A1D2", "#71A1D2", "#71A1D2", "#71A1D2", "#71A1D2", "#71A1D2", "#71A1D2", "#71A1D2", "#71A1D3", "#71A1D3", "#71A1D3", "#71A1D3", "#71A1D3", "#70A1D3", "#70A1D3", "#70A1D3", "#70A1D4", "#70A1D4", "#70A1D4", "#70A1D4", "#70A1D4", "#70A1D4", "#70A1D4", "#70A1D4", "#70A1D5", "#70A1D5", "#6FA1D5", "#6FA1D5", "#6FA1D5", "#6FA1D5", "#6FA0D5", "#6FA0D5", "#6FA0D5", "#6FA0D6", "#6FA0D6", "#6FA0D6", "#6FA0D6", "#6FA0D6", "#6EA0D6", "#6EA0D6", "#6EA0D6", "#6EA0D7", "#6EA0D7", "#6EA0D7", "#6EA0D7", "#6EA0D7", "#6EA0D7", "#6EA0D7", "#6EA0D7", "#6EA0D8", "#6EA0D8", "#6DA0D8", "#6DA0D8", "#6DA0D8", "#6DA0D8", "#6DA0D8", "#6DA0D8", "#6DA0D9", "#6DA0D9", "#6DA0D9", "#6DA0D9", "#6DA0D9", "#6DA0D9", "#6DA0D9", "#6CA0D9", "#6CA0D9", "#6CA0DA", "#6CA0DA", "#6CA0DA", "#6CA0DA", "#6CA0DA", "#6CA0DA", "#6C9FDA", "#6C9FDA", "#6C9FDB", "#6C9FDB", "#6C9FDB", "#6B9FDB", "#6B9FDB", "#6B9FDB", "#6B9FDB", "#6B9FDB", "#6B9FDC", "#6B9FDC", "#6B9FDC", "#6B9FDC", "#6B9FDC", "#6B9FDC", "#6B9FDC", "#6A9FDC", "#6A9FDD", "#6A9FDD", "#6A9FDD", "#6A9FDD", "#6A9FDD", "#6A9FDD", "#6A9FDD", "#6A9FDD", "#6A9FDD", "#6A9FDE", "#6A9FDE", "#6A9FDE", "#699FDE", "#699FDE", "#699FDE", "#699FDE", "#699FDE", "#699FDF", "#699FDF", "#699FDF", "#699FDF", "#699FDF", "#699FDF", "#699FDF", "#699FDF", "#689EE0", "#689EE0", "#689EE0", "#689EE0", "#689EE0", "#689EE0", "#689EE0", "#689EE0", "#689EE1", "#689EE1", "#689EE1", "#689EE1", "#689EE1", "#679EE1", "#679EE1", "#679EE1", "#679EE2", "#679EE2", "#679EE2", "#679EE2", "#679EE2", "#679EE2", "#679EE2", "#679EE2", "#679EE2", "#679EE3", "#669EE3", "#669EE3", "#669EE3", "#669EE3", "#669EE3", "#669EE3", "#669EE3", "#669EE4", "#669EE4", "#669EE4", "#669EE4", "#669EE4", "#659EE4", "#659EE4", "#659EE4", "#659EE5", "#659EE5", "#659DE5", "#659DE5", "#659DE5", "#659DE5", "#659DE5", "#659DE5", "#659DE6", "#659DE6", "#649DE6", "#649DE6", "#649DE6", "#649DE6", "#649DE6", "#649DE6", "#649DE6", "#649DE7", "#649DE7", "#649DE7", "#649DE7", "#649DE7", "#649DE7", "#639DE7", "#639DE7", "#639DE8", "#639DE8", "#639DE8", "#639DE8", "#639DE8", "#639DE8", "#639DE8", "#639DE8", "#639DE9", "#639DE9", "#639DE9", "#629DE9", "#629DE9", "#629DE9", "#629DE9", "#629DE9", "#629DEA", "#629DEA", "#629DEA", "#629CEA", "#629CEA", "#629CEA", "#629CEA", "#619CEA", "#619CEA", "#619CEB", "#619CEB", "#619CEB", "#619CEB", "#619CEB", "#619CEB", "#619CEB", "#619CEB", "#619CEC", "#619CEC", "#619CEC", "#609CEC", "#609CEC", "#609CEC", "#609CEC", "#609CEC", "#609CED", "#609CED", "#609CED", "#609CED", "#609CED", "#609CED", "#609CED", "#609CED", "#5F9CEE", "#5F9CEE", "#5F9CEE", "#5F9CEE", "#5F9CEE", "#5F9CEE", "#5F9CEE", "#5F9CEE", "#5F9CEE", "#5F9CEF", "#5F9CEF", "#5F9CEF", "#5F9CEF", "#5E9BEF", "#5E9BEF", "#5E9BEF", "#5E9BEF", "#5E9BF0", "#5E9BF0", "#5E9BF0", "#5E9BF0", "#5E9BF0", "#5E9BF0", "#5E9BF0", "#5E9BF0", "#5E9BF1", "#5D9BF1", "#5D9BF1", "#5D9BF1", "#5D9BF1", "#5D9BF1", "#5D9BF1", "#5D9BF1", "#5D9BF2", "#5D9BF2", "#5D9BF2", "#5D9BF2", "#5D9BF2", "#5C9BF2", "#5C9BF2", "#5C9BF2", "#5C9BF2", "#5C9BF3", "#5C9BF3", "#5C9BF3", "#5C9BF3", "#5C9BF3", "#5C9BF3", "#5C9BF3", "#5C9BF3", "#5C9BF4", "#5B9BF4", "#5B9BF4", "#5B9BF4", "#5B9BF4", "#5B9AF4", "#5B9AF4", "#5B9AF4", "#5B9AF5", "#5B9AF5", "#5B9AF5", "#5B9AF5", "#5B9AF5", "#5B9AF5", "#5A9AF5", "#5A9AF5", "#5A9AF6", "#5A9AF6", "#5A9AF6", "#5A9AF6", "#5A9AF6", "#5A9AF6", "#5A9AF6", "#5A9AF6", "#5A9AF6", "#5A9AF7", "#5A9AF7", "#599AF7", "#599AF7", "#599AF7", "#599AF7", "#599AF7", "#599AF7", "#599AF8", "#599AF8", "#599AF8", "#599AF8", "#599AF8", "#599AF8", "#589AF8", "#589AF8", "#589AF9", "#589AF9", "#589AF9", "#589AF9", "#589AF9", "#589AF9", "#589AF9", "#5899F9", "#5899FA", "#5899FA", "#5899FA", "#5799FA", "#5799FA", "#5799FA", "#5799FA", "#5799FA", "#5799FA", "#5799FB", "#5799FB", "#5799FB", "#5799FB", "#5799FB", "#5799FB", "#5799FB", "#5699FB", "#5699FC", "#5699FC", "#5699FC", "#5699FC", "#5699FC", "#5699FC", "#5699FC", "#5699FC", "#5699FD", "#5699FD", "#5699FD", "#5699FD", "#5599FD", "#5599FD", "#5599FD", "#5599FD", "#5599FE", "#5599FE", "#5599FE", "#5599FE", "#5599FE", "#5599FE", "#5599FE", "#5599FE", "#5599FF"];
 // Filters
 
 var countryFilter = 'All';
@@ -79,7 +82,7 @@ doc.ready (function (e) {
 	allFilter = $('#allFilter');
 	degreeSelection = $('#degreeSelection');
 	rankingTitle = $('#rankingTitle');
-	
+
 	// Creating the world map
 	
 	map.vectorMap ({
@@ -104,56 +107,6 @@ doc.ready (function (e) {
 				fill: '#5555ff'
 				
 			},
-			
-		},
-		
-		// Labels diplayed on the pins, e.g. the rank of the pinned university
-		
-		labels: {
-
-            markers: {
-				
-				// Displays its rank
-				
-                render: function (code) {
-                    return parseInt (code) + 1;
-                },
-				
-				// Offsets so that the rank is centered inside the dot shape
-				
-				offsets: function(code){
-					
-					switch (code) {
-						
-					case '0':
-						return [-28, 0];
-						
-					case '1':
-						return [-24, 0];
-						
-					case '2':
-						return [-20, 0];
-						
-					default:
-						return [-18, 0];
-						
-					}
-					
-				}
-				
-            }
-
-        },
-		
-		// Changing the font for the rank label
-		
-		markerLabelStyle: {
-			
-			initial: {
-				
-				'font-family': 'Roboto',
-				
-			}
 			
 		},
 		
@@ -715,10 +668,10 @@ function refreshMapPins () {
 	for (i = leaderboard.length - 1; i > -1; i--) {
 	
 		var entry = leaderboard [i];
-		mapObject.addMarker (i, {name: entry.name, latLng: [entry.lat, entry.lng], style: {
+		mapObject.addMarker (i, {name: i+1 + '. ' + entry.name, latLng: [entry.lat, entry.lng], style: {
 		
-			fill: (i == 0 ? '#ffcc00' : (i == 1 ? '#999999' : (i == 2 ? '#996600' : '#5599ff'))),
-			r: (i == 0 ? 20 : (i == 1 ? 16 : (i == 2 ? 12 : 10)))
+			fill: (i < 10 ? top10Gradient[i] : restGradient[i-10]),
+			r: 5 + 11/(i+1)
 			
 		}});
 	
