@@ -88,7 +88,7 @@ doc.ready (function (e) {
 		backgroundColor: '#000033',
 		zoomOnScrollSpeed: 1,
 		regionsSelectable: true,
-		
+		zoomMax: 1000,
 		// Colors of the map countries
 		
 		regionStyle: {
@@ -152,7 +152,6 @@ doc.ready (function (e) {
 			initial: {
 				
 				'font-family': 'Roboto',
-				'font-size' : '10px'
 				
 			}
 			
@@ -778,7 +777,7 @@ function getRankedUniversities () {
 			// console.log(data);
             // Build ranking to return to leaderboard
 			var step;
-			for (step=1; step<data.length; step++){
+			for (step=1; step<=100; step++){
 				obj = {
 					name: data[step-1].key,
 					rank: step,
