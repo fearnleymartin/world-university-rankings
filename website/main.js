@@ -558,7 +558,6 @@ function switchToFilterDomain () {
 // Filter completed : transition back to the map
 
 function filterComplete () {
-    show_legend()
 	
 	allFilter.css ('pointer-events', 'none');
 	leaderboardDirty = true;
@@ -604,6 +603,7 @@ function filterComplete () {
 		topButtons.attr ('class', 'swipeDown');
 		
 		transitioning = false;
+		show_legend()
 		
 	}, 1200);
 	
